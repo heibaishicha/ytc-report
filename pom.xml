@@ -24,6 +24,9 @@
         <scala.binary.version>2.11</scala.binary.version>
         <mysql.driver.version>5.1.30</mysql.driver.version>
         <java.version>1.8</java.version>
+        <mongodb.version>3.6.3</mongodb.version>
+        <common.core.version>common-core-20181023</common.core.version>
+        <fastjson.version>1.2.28</fastjson.version>
         <encoding>UTF-8</encoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -64,6 +67,11 @@
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
         <dependency>
@@ -109,6 +117,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <!--基础环境-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -120,9 +129,109 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>common.core</groupId>
+            <artifactId>common-web</artifactId>
+            <version>${common.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>common.core</groupId>
+            <artifactId>common-tag</artifactId>
+            <version>${common.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>common.core</groupId>
+            <artifactId>common-sso</artifactId>
+            <version>${common.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>common.core</groupId>
+            <artifactId>common-notify</artifactId>
+            <version>${common.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>common.core</groupId>
+            <artifactId>common-doc</artifactId>
+            <version>${common.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.9</version>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.44</version>
+        </dependency>
+        <!--RabbitMQ-->
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
+        <dependency>
+            <groupId>jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <!--HBase-->
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-common</artifactId>
+            <version>0.96.1-hadoop2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-protocol</artifactId>
+            <version>0.96.1-hadoop2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>0.96.1-hadoop2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-server</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>${mongodb.version}</version>
+        </dependency>
+        <!-- xxl-job-core -->
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jblas</groupId>
+            <artifactId>jblas</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <!--tomcat-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>9.0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>8.5.8</version>
         </dependency>
         <!--日志-->
     </dependencies>

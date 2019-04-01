@@ -2,4 +2,58 @@
 server:
   port: 8088
 
-# 配置缓存
+spring:
+  application:
+    name: spark-report
+
+  # 配置Redis
+  redis:
+    database: 0
+    port: 6379
+    password: yitaichang666
+    host: redis.dev.yitaichang.cn
+
+  # 配置本地Mongodb
+  #  data:
+  #    mongodb:
+  #      uri: mongodb://192.168.68.161:27017/local
+
+  # 配置开发环境Mongodb
+  data:
+    mongodb:
+      uri: mongodb://root:123456@mongodb.dev.yitaichang.cn:27017/admin
+
+#开发环境Eureka
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://apis-eureka.dev.yitaichang.cn/eureka/
+#  instance:
+#    instance-id: ${spring.application.name}:${server.port}
+#    # 配置使用主机名注册服务
+#    # 优先使用IP地址方式进行注册服务
+#    prefer-ip-address: true
+#    # 配置使用指定IP
+#    ip-address: 192.168.1.13
+
+#本地Eureka
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone:http://127.0.0.1:8761/eureka/
+
+#feign:
+#  httpclient:
+#    connection-timeout: 30000
+
+#xxl:
+#  job:
+#    accessToken:
+#    admin:
+#      addresses: 192.168.1.220:9090
+#    executor:
+#      appname: algorithm-service
+#      logpath: /data/applogs/xxl-job/jobhandler
+#      ip:
+#      logretentiondays: -1
+#      port: 10099
