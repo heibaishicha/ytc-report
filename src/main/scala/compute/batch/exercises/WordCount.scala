@@ -6,7 +6,7 @@ import org.apache.spark.SparkContext
 object WordCount {
 
   def main(args : Array[String]){
-    val conf =new SparkConf().setAppName("WordCountScala").setMaster("spark://ip:7077")
+    val conf =new SparkConf().setAppName("WordCountScala").setMaster("local")
     val sc = new SparkContext(conf)
     val lines=sc.textFile("C:\\work\\myItem\\bigdata\\spark-report\\README.md")
     val words = lines.flatMap(line => line.split(" "))

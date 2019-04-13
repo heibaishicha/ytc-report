@@ -23,18 +23,18 @@ spring:
     mongodb:
       uri: mongodb://root:123456@mongodb.dev.yitaichang.cn:27017/admin
 
-#开发环境Eureka
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://apis-eureka.dev.yitaichang.cn/eureka/
-#  instance:
-#    instance-id: ${spring.application.name}:${server.port}
-#    # 配置使用主机名注册服务
-#    # 优先使用IP地址方式进行注册服务
-#    prefer-ip-address: true
-#    # 配置使用指定IP
-#    ip-address: 192.168.1.13
+# 开发环境Eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://apis-eureka.dev.yitaichang.cn/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    # 配置使用主机名注册服务
+    # 优先使用IP地址方式进行注册服务
+    prefer-ip-address: true
+    # 配置使用指定IP
+    ip-address: 192.168.1.13
 
 #本地Eureka
 #eureka:
@@ -42,10 +42,11 @@ spring:
 #    serviceUrl:
 #      defaultZone:http://127.0.0.1:8761/eureka/
 
-#feign:
-#  httpclient:
-#    connection-timeout: 30000
+feign:
+  httpclient:
+    connection-timeout: 30000
 
+# 本地环境
 #xxl:
 #  job:
 #    accessToken:
@@ -57,3 +58,16 @@ spring:
 #      ip:
 #      logretentiondays: -1
 #      port: 10099
+
+# 开发环境
+xxl:
+  job:
+    accessToken:
+    admin:
+      addresses: 192.168.1.220:9090
+    executor:
+      appname: algorithm-service
+      logpath: /data/applogs/xxl-job/jobhandler
+      ip:
+      logretentiondays: -1
+      port: 10099
